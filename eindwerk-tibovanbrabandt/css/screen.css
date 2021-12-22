@@ -1,0 +1,1345 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+@font-face {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	src: url('../fonts/Work_Sans/WorkSans-Regular.ttf');
+}
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+	/* colors */
+	--global-color-backgroundColor: #152642;
+	--global-color-white: white;
+	--global-color-front: var(--global-color-white);
+	--global-color-yellow: #FFD700;
+    --global-color-selector: #5f91ff;
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: 'Work Sans', Helvetica, arial, sans-serif;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'zero' 1;
+	background: var(--global-color-backgroundColor);
+	color: var(--global-color-front);
+	overflow: hidden;
+}
+
+body {
+	height: 100vh;
+	/*display: flex;*/
+	justify-content: center;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+	background: var(--global-color-selector);
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: var(--global-color-selector);
+	color: white;
+	text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 48px;
+	margin: 0 0 24px;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 40px;
+	margin: 0 0 24px;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+	margin: 0 0 24px;
+}
+
+ul,
+ol {
+	padding-left: 24px;
+}
+
+li ul,
+li ol {
+	margin-bottom: 0;
+}
+
+blockquote {
+	font-style: normal;
+	font-size: 23px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+blockquote * {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+figcaption {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 8px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: LightGrey;
+	margin: 0 0 24px;
+}
+
+a {
+	color: red;
+	outline-color: red;
+	outline-width: medium;
+	outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+	color: red;
+}
+
+a:hover,
+a:focus {
+	color: red;
+}
+
+label,
+input {
+	display: block;
+}
+
+select {
+	width: 100%;
+}
+
+input::placeholder {
+	color: gray;
+}
+
+svg{
+	width: 72px;
+	height: 72px;
+	color: white;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+.c-app {
+	max-width: 100rem;
+	display: flex;
+	padding: 32px;
+	width: 100%;
+	justify-content: center;
+	height: 100vh;
+}
+
+/*@media only screen and (max-width: 768px) {
+	.c-app{
+		max-width: 10rem;
+		display: block;
+		padding: 10px;
+		width: 100%;
+		justify-content: center;
+	}
+	.c-intro{
+		position: absolute;
+		text-align: center;
+		margin-top: 0;
+		max-width: 100%;
+
+	}
+	.c-body{
+		justify-content: center;
+		position: absolute;
+		margin-top: 22rem;
+		justify-content: space-between;
+	}
+	
+	.c-meteorite-count{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+	
+	.c-info{
+		width: 100%;
+	}
+	
+	.c-last-meteorite-info{
+		width: 100%;
+		margin: auto;
+	}
+	
+	.c-history-meteorite{
+		margin: auto;
+		width: 100%;
+	}
+	
+	.c-body-box1{
+		flex: 1;
+	}
+	
+	.c-body-box2{
+		flex: 3;
+	}
+}*/
+
+/*.c-header{
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}*/
+
+/*.c-logo {
+	align-items: center;
+	font-size: 16px;
+	font-weight: 400;
+}*/
+
+/*.title-center{
+	vertical-align: center;
+	top: 50%
+}*/
+
+.c-intro {
+	text-align: center;
+}
+
+.c-body{
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.c-meteorite-count{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.c-info{
+	width: 100%;
+}
+
+.c-last-meteorite-info{
+	width: 100%;
+	margin: auto;
+}
+
+.c-history-meteorite{
+	margin: auto;
+	width: 100%;
+}
+
+.c-body-box1{
+	flex: 1;
+}
+
+.c-body-box2{
+	flex: 3;
+}
+
+
+@media (max-width: 1300px) {
+    .c-header{
+        margin: auto;
+    }
+    
+    .c-body{
+        display: block;
+        justify-content: center;
+    }
+
+    html{
+        overflow: visible;
+        overflow-x: hidden;
+    }
+
+    .c-body-box1{
+        display: block;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .c-last-meteorite-info{
+        text-align: center;
+    }
+    
+    .c-body-box2{
+        display: block;
+        margin-top: 35%;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .c-history-title{
+
+    }
+
+    .c-table-info{
+        margin: auto;
+        align-items: center;
+    }
+
+    .c-history-info{
+        margin: auto;
+        align-items: center;
+    }
+
+    .accordion{
+        margin: auto;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .accordion .contentBx{
+        margin: 0;
+    }
+
+    .wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.c-history-title{
+    display: flex;
+    justify-content:flex-end;
+}
+
+th, td{
+	text-align: left;
+	padding: 15px;
+}
+
+.c-app__summary {
+	font-size: 28px;
+	line-height: 40px;
+}
+/*
+    Component: Horizon
+    ---
+    Horizon with sun visualisation
+*/
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		/* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+	abbr[title]:after {
+		content: ' (' attr(title) ')';
+	}
+	/*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+	a[href^='#']:after,
+	a[href^='javascript:']:after {
+		content: '';
+	}
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	/*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+	thead {
+		display: table-header-group;
+	}
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
+
+.accordion{
+    max-width: 200px;
+}
+
+.accordion .contentBx{
+    position: absolute;
+    margin: 10px 20px;
+	width: 250px;
+}
+
+.accordion .contentBx .label{
+    position: relative;
+    padding: 10px;
+    background: var(--global-color-white);
+    color: var(--global-color-backgroundColor);
+    cursor: pointer;
+}
+
+.accordion .contentBx .label::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentBx.active .label::before{
+    content: '-';
+}
+
+.accordion .contentBx .content{
+    position: relative;
+    background: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.accordion .contentBx.active .content{
+    height: 100px;
+    padding: 10px;
+}
+
+#map { height: 200px; }
+
+.loading{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  .percent{
+	color: var(--global-color-white);
+	font-size: 100px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 15px;
+  }
+  .progress-bar{
+	width: 406px;
+	height: 21px;
+	background: var(--global-color-backgroundColor);
+	border-radius: 13px;
+	padding: 3px;
+	box-sizing: border-box;
+  }
+  .progress{
+	width: 10px;
+	height: 15px;
+	background: var(--global-color-white);
+	border-radius: 13px;
+  }
+  .text{
+	position: absolute;
+	left: 160px;
+	color: var(--global-color-white);
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 21px;
+	display: none;
+  }
+  .text-blink{
+	animation: animate .7s ease-in-out .1s;
+  }
+  @keyframes animate {
+	0%{
+	  opacity: 1;
+	}
+	50%{
+	  opacity: 0.2;
+	}
+	100%{
+	  opacity: 1;
+	}
+  }
+
+.background-progress{
+	background: var(--global-color-backgroundColor);
+	width: 100%;
+	height: 100%;
+}
+
+mark.yellow{
+	color: var(--global-color-yellow);
+	background: none;
+}
+
+.sky-container {
+	position: absolute;
+    top: 2%;
+    left: -55%;
+	width: 4000px;
+	height: 200px;
+	clip-path: circle(50% at 50% 50%);
+	border-radius: 50%;
+	transform: rotateZ(45deg);
+  }
+  
+  .border {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 0 3px 2px #d6d6d6;
+	z-index: 100;
+  }
+  
+  .star {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 2px;
+	background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+	filter: drop-shadow(0 0 6px #699bff);
+	animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  }
+  
+  .star::before, .star::after {
+	position: absolute;
+	content: '';
+	top: calc(50% - 1px);
+	right: 0;
+	height: 2px;
+	background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+	border-radius: 100%;
+	transform: translateX(50%) rotateZ(45deg);
+	animation: shining 3000ms ease-in-out infinite;
+  }
+  
+  .star::after {
+	transform: translateX(50%) rotateZ(-45deg);
+  }
+  
+  .star:nth-child(1) {
+	top: calc(50% - 200px);
+	left: calc(50% - 300px);
+	animation-delay: 650ms;
+  }
+  .star:nth-child(1)::before, .star:nth-child(1)::after {
+	animation-delay: 650ms;
+  }
+  
+  .star:nth-child(2) {
+	top: calc(50% - -50px);
+	left: calc(50% - 190px);
+	animation-delay: 150ms;
+  }
+  .star:nth-child(2)::before, .star:nth-child(2)::after {
+	animation-delay: 150ms;
+  }
+  
+  .star:nth-child(3) {
+	top: calc(50% - -90px);
+	left: calc(50% - 200px);
+	animation-delay: 1600ms;
+  }
+  .star:nth-child(3)::before, .star:nth-child(3)::after {
+	animation-delay: 1600ms;
+  }
+  
+  .star:nth-child(4) {
+	top: calc(50% - 50px);
+	left: calc(50% - 250px);
+	animation-delay: 4700ms;
+  }
+  .star:nth-child(4)::before, .star:nth-child(4)::after {
+	animation-delay: 4700ms;
+  }
+  
+  .star:nth-child(5) {
+	top: calc(50% - -190px);
+	left: calc(50% - 200px);
+	animation-delay: 2100ms;
+  }
+  .star:nth-child(5)::before, .star:nth-child(5)::after {
+	animation-delay: 2100ms;
+  }
+  
+  
+  
+  
+  /* Animations */
+  @keyframes tail {
+	0% {
+	  width: 0;
+	}
+	
+	30% {
+	  width: 100px;
+	}
+	
+	100% {
+	  width: 0;
+	}
+  }
+  
+  @keyframes shining {
+	0% {
+	  width: 0;
+	}
+	50% {
+	  width: 30px;
+	}
+	100% {
+	  width: 0;
+	}
+  }
+  
+  @keyframes shooting {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(320px);
+	}
+  }
+
+.o-row {
+    padding: 24px 24px 0;
+    display: flow-root;
+}
+
+.o-row--yellow{
+    background-color: #FFE01B;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 75rem; /* 64.77777777777778 * 18px = 1166px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .o-layout__item {
+        flex-basis: 100%;
+    }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    display: flex;
+    align-items: center;
+    margin-left: 25%;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+    max-width: 36em !important;
+}
+
+.u-max-width-md {
+    max-width: 45em !important;
+}
+
+.u-max-width-lg {
+    max-width: 88.88888888888889em !important;
+}
+
+.u-max-width-xl {
+    max-width: 75em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+    flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+    flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+    flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+    flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+    flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+    flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+    flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+    flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+    flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+    flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp1 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp1 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp1 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp1 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp1 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp1 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp1 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp2 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp2 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp2 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp2 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp2 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp2 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp2 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp3 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp3 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp3 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp3 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp3 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp3 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp3 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp4 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp4 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp4 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp4 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp4 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp4 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp4 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
