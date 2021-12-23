@@ -147,7 +147,7 @@ let showResult = queryResponse => {
 	document.querySelector('.js-long').innerHTML = last.reclong;
 	chartVisualiser(queryResponse);
 	
-	var map = L.map('map').setView([activities[0].reclat, activities[0].reclong], 13);
+	var map = L.map('map').setView([last.reclat, last.reclong], 13);
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
