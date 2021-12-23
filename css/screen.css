@@ -104,7 +104,11 @@ h3 {
 h1 {
 	font-size: 36px;
 	line-height: 48px;
-	margin: 0 0 24px;
+}
+
+h1.logoText {
+    padding-left: 15px;
+    text-align: center;
 }
 
 h2 {
@@ -424,20 +428,13 @@ svg{
         margin: 0;
     }
 
-    .wrap{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .c-last-meteorite-info{
         text-align: center;
     }
     
     .c-body-box2{
         text-align: justify;
-        margin-top: 35%;
+        margin-top: 15%;
         max-width: 100%;
         align-items: center;
         flex-direction: column;
@@ -565,12 +562,12 @@ th, td{
 }
 
 .accordion{
-    max-width: 200px;
+    display: flex;
+    justify-content: center;
 }
 
 .accordion .contentBx{
-    position: absolute;
-    margin: 10px 20px;
+    margin: 0px 20px;
 	width: 250px;
 }
 
@@ -1075,8 +1072,9 @@ mark.yellow{
 
 .c-header {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin-left: 25%;
 }
 
 /*------------------------------------*\
