@@ -39,11 +39,12 @@ html {
 	font-feature-settings: 'zero' 1;
 	background: var(--global-color-backgroundColor);
 	color: var(--global-color-front);
-	overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 body {
-	height: 100vh;
+	height: 50vh;
 	/*display: flex;*/
 	justify-content: center;
 }
@@ -407,9 +408,27 @@ svg{
     }
 
     .c-body-box1{
-        display: block;
         max-width: 100%;
         align-items: center;
+        flex-direction: column;
+    }
+
+    
+    .accordion{
+        margin: auto;
+        align-items: center;
+        width: 100%;
+    }
+
+    .accordion .contentBx{
+        margin: 0;
+    }
+
+    .wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .c-last-meteorite-info{
@@ -417,10 +436,11 @@ svg{
     }
     
     .c-body-box2{
-        display: block;
+        text-align: justify;
         margin-top: 35%;
         max-width: 100%;
         align-items: center;
+        flex-direction: column;
     }
 
     .c-history-title{
@@ -435,24 +455,6 @@ svg{
     .c-history-info{
         margin: auto;
         align-items: center;
-    }
-
-    .accordion{
-        margin: auto;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-    }
-
-    .accordion .contentBx{
-        margin: 0;
-    }
-
-    .wrap{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 

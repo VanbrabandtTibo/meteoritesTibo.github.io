@@ -128,17 +128,23 @@ let showResult = queryResponse => {
 
 	console.log(activities);
 
+	var last;
+	var lengte;
+
+	lengte = activities.length;
+	last = activities[lengte-1];
+
 	document.querySelector('.js-meoteoriteCount').innerHTML = `Landed meteorites count <big style="color:#FFD700">${queryResponse.length}</big> on planet earth.`;
 	console.log(queryResponse[0].name);
-	document.querySelector('.js-name').innerHTML = activities[0].name;
+	document.querySelector('.js-name').innerHTML = last.name;
 	console.log(queryResponse[0].mass);
-	document.querySelector('.js-mass').innerHTML = activities[0].mass;
+	document.querySelector('.js-mass').innerHTML = last.mass;
 	console.log(queryResponse[0].year);
-	document.querySelector('.js-date').innerHTML = formatDate(activities[0].year);
+	document.querySelector('.js-date').innerHTML = formatDate(last.year);
 	console.log(queryResponse[0].reclat);
-	document.querySelector('.js-lat').innerHTML = activities[0].reclat;
+	document.querySelector('.js-lat').innerHTML = last.reclat;
 	console.log(queryResponse[0].reclong);
-	document.querySelector('.js-long').innerHTML = activities[0].reclong;
+	document.querySelector('.js-long').innerHTML = last.reclong;
 	chartVisualiser(queryResponse);
 	
 	var map = L.map('map').setView([activities[0].reclat, activities[0].reclong], 13);
